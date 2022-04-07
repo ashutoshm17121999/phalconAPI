@@ -1,0 +1,28 @@
+<?php
+
+$img = $data->current->condition->icon;
+$fdata = $data->forecast->forecastday;
+
+?>
+
+<?php
+if (isset($fdata)) { ?>
+<form action="index" method="post">
+<div class="d-flex my-4 border p-3">
+  <img class="card-img-top" style="width: 14rem; height: 16rem" src="<?php echo $img; ?>" alt="Card image cap">
+  <div class="card-body">
+    <input type="hidden" name="city" value="<?php echo $city; ?>">
+    <input type="hidden" name="">
+    <p class="card-text"><b>City: </b>&nbsp;<?php echo $data->location->name; ?></p>
+    <?php foreach($fdata as $key => $value){ ?>
+    <p class="card-text"><b>Date: </b>&nbsp;<?php echo $value->date.'<br>'; ?></p>
+    <p class="card-text"><b>Temperature: </b>&nbsp;<?php echo $value->day->maxtemp_c.'<br>'; ?></p>
+    <?php } ?>
+
+    <input type="submit" value="Forecast" class="btn btn-primary">
+</div>
+</div>
+</form>
+<?php
+}
+?>

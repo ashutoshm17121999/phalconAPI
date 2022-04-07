@@ -1,0 +1,56 @@
+<form method="POST" action="">
+<div class="input-group">
+  <input type="search" name="location" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+  <button type="submit" name="search" class="btn btn-outline-primary">search</button>
+
+</form>
+<?php
+// echo '<pre>';
+// print_r($data->location->name);
+// die;
+if(isset($data)){
+$name = $data->location->name;
+$region = $data->location->region;
+$country = $data->location->country;
+$lat = $data->location->lat;
+$lon = $data->location->lon;
+$tz_id = $data->location->tz_id;
+$localtime_epoch = $data->location->localtime_epoch;
+$localtime = $data->location->localtime;
+$temp_c = $data->current->temp_c;
+$temp_f = $data->current->temp_f;
+$img = $data->current->condition->icon;
+$text = $data->current->condition->text;
+}
+?>
+</div>
+<?php if(isset($data)){ ?>
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+        
+      <img src="<?php echo $img; ?>" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+          
+        <h5 class="card-title"><b>Weather Api</b></h5>
+        <p class="card-text"><b>Name:</b><?php  echo $name; ?></p>
+        <p class="card-text"><b>Region:</b><?php echo $region; ?></p>
+        <p class="card-text"><b>Country:</b><?php echo $country; ?></p>
+        <p class="card-text"><b>Latitude:</b><?php echo $lat; ?></p>
+        <p class="card-text"><b>Longitude:</b><?php echo $lon; ?></p>
+        <p class="card-text"><b>LocalTime:</b><?php echo $localtime; ?></p>
+        <p class="card-text"><b>Text:</b><?php echo $text; ?></p>
+
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <form action="weather/explore" method="POST">
+            <input type="hidden" name="hidden" value="<?php echo $name; ?>">
+        <button type="submit" name="explore" class="btn btn-outline-primary">Explore</button>
+        </form>
+            <?php } ?>
+    </div>
+    </div>
+  </div>
+</div>
+

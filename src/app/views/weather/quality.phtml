@@ -1,0 +1,23 @@
+<?php
+?>
+<?php if(isset($data)){ ?>
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        
+        <div class="col-md-8">
+          <div class="card-body">
+              
+            <h5 class="card-title"><b>Weather Air Quality</b></h5>
+            <p class="card-text"><b>Name:</b><?php echo $city; ?></p>
+            <p class="card-text"><b>co:</b><?php  echo $data->current->air_quality->co; ?></p>
+            <p class="card-text"><b>no2:</b><?php  echo $data->current->air_quality->no2; ?></p>
+            <p class="card-text"><b>o3:</b><?php  echo $data->current->air_quality->o3; ?></p>
+            <p class="card-text"><b>so2:</b><?php  echo $data->current->air_quality->so2; ?></p>
+            <p class="card-text"><b>pm2_5:</b><?php  echo $data->current->air_quality->pm2_5; ?></p>
+            <p class="card-text"><b>pm10:</b><?php  echo $data->current->air_quality->pm10; ?></p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <?php } ?>
+        </div>
+        </div>
+      </div>
+    </div>

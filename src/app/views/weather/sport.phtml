@@ -1,0 +1,33 @@
+<?php 
+// echo '<pre>';
+// // print_r($data->golf->stadium);
+// foreach($data->golf as $k => $v){
+//     echo $v->stadium;
+// }
+// die;
+?>
+<?php
+?>
+<?php if(isset($data)){ ?>
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        
+        <div class="col-md-8">
+          <div class="card-body">
+              <?php foreach($data->golf as $k => $v) { ?>
+              
+            <h5 class="card-title"><b>Weather Sports</b></h5>
+            <p class="card-text"><b>Name:</b><?php echo $city; ?></p>
+            <p class="card-text"><b>stadium:</b><?php  echo $v->stadium; ?></p>
+            <p class="card-text"><b>country:</b><?php  echo $v->country; ?></p>
+            <p class="card-text"><b>tournament:</b><?php  echo $v->tournament; ?></p>
+            <!-- <p class="card-text"><b>region:</b><?php  echo $v->region; ?></p> -->
+            <p class="card-text"><b>start:</b><?php  echo $v->start; ?></p>
+            <p class="card-text"><b>match:</b><?php  echo $v->match; ?></p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <?php } ?>
+                <?php } ?>
+        </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,65 @@
+<?php
+// print_r($data);
+// die;
+if(isset($data)){
+$name = $data->location->name;
+$region = $data->location->region;
+$country = $data->location->country;
+$lat = $data->location->lat;
+$lon = $data->location->lon;
+$tz_id = $data->location->tz_id;
+$localtime_epoch = $data->location->localtime_epoch;
+$localtime = $data->location->localtime;
+$temp_c = $data->current->temp_c;
+$temp_f = $data->current->temp_f;
+$img = $data->current->condition->icon;
+$text = $data->current->condition->text;
+}
+?>
+<form method="weather/explore" action="post">
+<section class="vh-100" style="background-color: #f5f6f7;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-10 col-lg-8 col-xl-6">
+
+        <div class="card  text-white" style="border-radius: 40px;">
+          <div class="bg-image" style="border-radius: 35px;">
+            <img
+              src="<?php echo $img; ?>"
+              class="card-img"
+              alt="weather"
+            />
+            <div class="mask" style="background-color: rgba(190, 216, 232, .5);"></div>
+          </div>
+          <div class="card-img-overlay text-dark p-5">
+            <h4 class="mb-0"><?php echo $name; ?>, <?php echo $country; ?>, <?php echo $region; ?></h4>
+            <p class="display-2 my-3"><?php echo $temp_c; ?>°C</p>
+            <p class="mb-2">Feels Like: <strong><?php echo $temp_c; ?>°C</strong></p>
+            <h5><?php echo $text; ?></h5>
+          </div>
+        </div> 
+        <!-- <form method = "quality" action="POST">
+        <input type = 
+
+       </form> -->
+        <a href="/weather/forecast?name='<?php echo $name; ?>'" name="forecast" class="btn btn-outline-danger">Forecast</a>
+        <a href="/weather/current?name='<?php echo $name; ?>'" name="current" class="btn btn-outline-danger">Current Weather</a>
+
+        <a href="/weather/sport?name='<?php echo $name; ?>'" name="sports" class="btn btn-outline-danger">Sports</a>
+
+        <a href="/weather/zone?name='<?php echo $name; ?>'" name="zone" class="btn btn-outline-danger">Time Zone</a>
+
+        <a href="/weather/astronomy?name='<?php echo $name; ?>'" name="astronomy" class="btn btn-outline-danger">Astronomy</a>
+
+
+        <a href="/weather/alert?name='<?php echo $name; ?>'" name="alert" class="btn btn-outline-danger">weather alerts</a>
+
+        <a href="/weather/quality?name='<?php echo $name; ?>'" name="quality" class="btn btn-outline-danger">Air quality</a>
+        <a href="/weather/history?name='<?php echo $name; ?>'" name="history" class="btn btn-outline-danger">History</a>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+</form>

@@ -1,0 +1,28 @@
+<?php
+?>
+<?php if(isset($data)){ ?>
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        
+        <div class="col-md-8">
+          <div class="card-body">
+              
+            <h5 class="card-title"><b>Current Weather</b></h5>
+            <p class="card-text"><b>Name:</b><?php echo $city; ?></p>
+            <p class="card-text"><b>last_updated_epoch:</b><?php  echo $data->current->last_updated_epoch; ?></p>
+            <p class="card-text"><b>last_updated:</b><?php  echo $data->current->last_updated; ?></p>
+            <p class="card-text"><b>temp_c:</b><?php  echo $data->current->temp_c; ?></p>
+            <p class="card-text"><b>temp_f:</b><?php  echo $data->current->temp_f; ?></p>
+            <p class="card-text"><b>is_day:</b><?php  echo $data->current->is_day; ?></p>
+            <p class="card-text"><b>wind_mph:</b><?php  echo $data->current->wind_mph; ?></p>
+            <p class="card-text"><b>wind_kph:</b><?php  echo $data->current->wind_kph; ?></p>
+            <p class="card-text"><b>wind_degree:</b><?php  echo $data->current->wind_degree; ?></p>
+            <p class="card-text"><b>wind_dir:</b><?php  echo $data->current->wind_dir; ?></p>
+            <p class="card-text"><b>humidity:</b><?php  echo $data->current->humidity; ?></p>
+            <p class="card-text"><b>cloud:</b><?php  echo $data->current->cloud; ?></p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <?php } ?>
+        </div>
+        </div>
+      </div>
+    </div>

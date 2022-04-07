@@ -1,0 +1,31 @@
+<?php
+if(isset($data)){
+$region = $data->location->region;
+$country = $data->location->country;
+$lat = $data->location->lat;
+$lon = $data->location->lon;
+$tz_id = $data->location->tz_id;
+$localtime_epoch = $data->location->localtime_epoch;
+$localtime = $data->location->localtime;
+}
+?>
+<?php if (isset($data)) { ?>
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+
+            <div class="col-md-8">
+                <div class="card-body">
+
+                    <h5 class="card-title"><b>Weather Time Zone</b></h5>
+                    <p class="card-text"><b>Name:</b><?php echo $city; ?></p>
+                    <p class="card-text"><b>Region:</b><?php echo $region; ?></p>
+                    <p class="card-text"><b>Country:</b><?php echo $country; ?></p>
+                    <p class="card-text"><b>Latitude:</b><?php echo $lat; ?></p>
+                    <p class="card-text"><b>Longitude:</b><?php echo $lon; ?></p>
+                    <p class="card-text"><b>LocalTime:</b><?php echo $localtime; ?></p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>

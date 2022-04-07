@@ -1,0 +1,28 @@
+<?php 
+// echo '<pre>';
+// print_r($data->astronomy->astro);
+// die;
+?>
+<?php
+?>
+<?php if(isset($data)){ ?>
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        
+        <div class="col-md-8">
+          <div class="card-body">
+              
+            <h5 class="card-title"><b>Weather Astronomy</b></h5>
+            <p class="card-text"><b>Name:</b><?php echo $city; ?></p>
+            <p class="card-text"><b>sunrise:</b><?php  echo $data->astronomy->astro->sunrise; ?></p>
+            <p class="card-text"><b>sunset:</b><?php  echo $data->astronomy->astro->sunset; ?></p>
+            <p class="card-text"><b>moonrise:</b><?php  echo $data->astronomy->astro->moonrise; ?></p>
+            <p class="card-text"><b>moonset:</b><?php  echo $data->astronomy->astro->moonset; ?></p>
+            <p class="card-text"><b>moon_phase:</b><?php  echo $data->astronomy->astro->moon_phase; ?></p>
+            <p class="card-text"><b>moon_illumination:</b><?php  echo $data->astronomy->astro->moon_illumination; ?></p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <?php } ?>
+        </div>
+        </div>
+      </div>
+    </div>
